@@ -1,0 +1,19 @@
+.subject-description{
+    background-color: white;
+    padding: 20px 0 0 20px;
+}
+.subject-name{
+    margin: 1em 0;
+}
+.subject-description:hover{
+    box-shadow: rgba(99, 99, 99, 0.6) 0px 5px 8px 0px;
+}
+.subject-description a{
+    color: black;
+    float: right;
+    padding: 15px;
+}
+.subject-description a:hover{
+    color: white;
+    background-color: #4878eb;
+}

@@ -1,0 +1,10 @@
+Nav a{
+    padding: 15px 0;
+    text-decoration: none;
+    margin-right: 35px;
+    font-size: 20px;
+    color: black;
+}
+Nav a:hover{
+    color: blue;
+}

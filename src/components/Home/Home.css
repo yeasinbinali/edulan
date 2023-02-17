@@ -1,0 +1,59 @@
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tagline{
+    color: rgb(255, 0, 128);
+    margin: 20px 0;
+}
+.headline{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    font-size: 4em;
+}
+.describe-sentence{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4em;
+    font-weight: lighter;
+    margin: 0.5em 0 1.7em 0;
+}
+.header-description a{
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    background-color: #4878eb;
+}
+.header-description a:hover{
+    background-color: rgb(255, 0, 128);
+    color: white;
+}
+.subjects{
+    background-color: rgb(246, 246, 246);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.headword{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    margin: 2.5em 0 0.5em 0;
+}
+.described-sentence{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight: lighter;
+    margin: 0.5em 0 1.7em 0;
+}
+
+.subject-page{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+@media screen and (max-width: 991px) {
+    .header-container {
+        display: block;
+    }
+}
