@@ -1,3 +1,4 @@
+/* header container */
 .header-container{
     display: flex;
     justify-content: space-between;
@@ -28,10 +29,15 @@
     background-color: rgb(255, 0, 128);
     color: white;
 }
+
+
+/* subjects container */
 .subjects{
     background-color: rgb(246, 246, 246);
     padding: 10px;
-    margin-bottom: 20px;
+}
+.subject-container{
+    margin-bottom: 5em;
 }
 .headword{
     color: black;
@@ -45,15 +51,82 @@
     font-weight: lighter;
     margin: 0.5em 0 1.7em 0;
 }
-
 .subject-page{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
+
+/* info container */
+.info-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4em 0 7em 0;
+}
+.info-description{
+    width: 50%;
+}
+.info-description h1{
+    margin: 20px 0;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+.info-description p{
+    font-size: 1.3em;
+}
+.info-description a{
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    background-color: #4878eb;
+}
+.info-description a:hover{
+    background-color: rgb(255, 0, 128);
+    color: white;
+}
+.feathers{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 2.5em;
+}
+.feathers h6{
+    background-color: rgb(240, 240, 240);
+    padding: 10px;
+}
+.feathers h6:hover{
+    color: #4878eb;
+}
+
+/* instructors container */
+.instructors-container{
+    background-color: rgb(246, 246, 246);
+}
+
+
+
+/* meadia screen */
 @media screen and (max-width: 991px) {
     .header-container {
         display: block;
+    }
+    .subject-page{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .info-container{
+        display: block;
+    }
+    .info-description{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 601px) {
+    .subject-page{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
     }
 }

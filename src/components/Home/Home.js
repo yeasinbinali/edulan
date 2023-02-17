@@ -4,12 +4,15 @@ import Image from "react-bootstrap/Image";
 import headerOne from "../../images/header/educourse-headerPic1.png";
 import headerTwo from "../../images/header/educourse-headerPic2.png";
 import { Link, useLoaderData } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaCheck } from "react-icons/fa";
 import { Container } from "react-bootstrap";
 import Subject from "./Subject/Subject";
+import aboutImg from "../../images/educourse-about.png";
+import Instructors from "./Instructors/Instructors";
 
 const Home = () => {
   const subjects = useLoaderData();
+  const instructors = useLoaderData();
   console.log(subjects);
   return (
     <div>
@@ -50,18 +53,51 @@ const Home = () => {
         </Container>
       </div>
 
-      <hr />
-
       {/* Info container */}
-      <Container>
+      <Container className="info-container">
         <div>
-
+          <Image className="w-100" src={aboutImg} alt=""></Image>
         </div>
-        <div>
+        <div className="info-description">
           <h1>Learn something new, and Grow your skills.</h1>
-          <p>Learning new skills can be highly beneficial to your career as it can help you position yourself to take on new projects and leverage new knowledge to advance.</p>
+          <p>
+            Learning new skills can be highly beneficial to your career as it
+            can help you position yourself to take on new projects and leverage
+            new knowledge to advance.
+          </p>
+          <div className="feathers">
+            <h6>
+              <FaCheck /> Expert Trainer
+            </h6>
+            <h6>
+              <FaCheck /> Remote Learning
+            </h6>
+            <h6>
+              <FaCheck /> Lifetime Access
+            </h6>
+            <h6>
+              <FaCheck /> Self Development
+            </h6>
+          </div>
+          <Link>
+            VIEW COURSES <FaArrowRight />
+          </Link>
         </div>
       </Container>
+
+      {/* instructors container */}
+      <div className='instructors-container'>
+        <Container>
+          <h2>Featured Instructors</h2>
+          <p>Online learning offers a new way to explore subjects you’re passionate about.</p>
+          {
+            instructors.map(instructor => <Instructors
+              instructor = {instructor}
+              key = {instructor.id}
+            ></Instructors>)
+          }
+        </Container>
+      </div>
     </div>
   );
 };
