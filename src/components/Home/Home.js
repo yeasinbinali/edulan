@@ -8,11 +8,9 @@ import { FaArrowRight, FaCheck } from "react-icons/fa";
 import { Container } from "react-bootstrap";
 import Subject from "./Subject/Subject";
 import aboutImg from "../../images/educourse-about.png";
-import Instructors from "./Instructors/Instructors";
 
 const Home = () => {
   const subjects = useLoaderData();
-  const instructors = useLoaderData();
   console.log(subjects);
   return (
     <div>
@@ -34,8 +32,6 @@ const Home = () => {
           <Image className="w-100" src={headerTwo} alt=""></Image>
         </div>
       </Container>
-
-      <hr />
 
       {/* Subject container */}
       <div className="subjects">
@@ -84,20 +80,6 @@ const Home = () => {
           </Link>
         </div>
       </Container>
-
-      {/* instructors container */}
-      <div className='instructors-container'>
-        <Container>
-          <h2>Featured Instructors</h2>
-          <p>Online learning offers a new way to explore subjects you’re passionate about.</p>
-          {
-            instructors.map(instructor => <Instructors
-              instructor = {instructor}
-              key = {instructor.id}
-            ></Instructors>)
-          }
-        </Container>
-      </div>
     </div>
   );
 };
