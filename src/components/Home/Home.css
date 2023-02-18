@@ -100,9 +100,42 @@
     color: #4878eb;
 }
 
-/* instructors container */
-.instructors-container{
-    background-color: rgb(246, 246, 246);
+
+/* join container */
+.join-container{
+    margin-bottom: 4em;
+    text-align: center;
+}
+.join-container h2{
+    font-size: 2.5em;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.join-container p{
+    text-align: center;
+    font-family:monospace;
+    width: 70%;
+    margin: auto;
+}
+.join-input {
+    margin: 2em auto;
+}
+.join-input input{
+    background-color: rgb(240, 240, 240);
+    border: none;
+    padding: 10px;
+    width: 50%;
+    margin: 1em auto;
+}
+.join-input button {
+    padding: 10px;
+    background-color: rgb(255, 0, 128);
+    border: none;
+    color: white;
+}
+.join-input button:hover {
+    background-color: #4878eb;
 }
 
 

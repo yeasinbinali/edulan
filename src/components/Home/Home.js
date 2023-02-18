@@ -80,6 +80,18 @@ const Home = () => {
           </Link>
         </div>
       </Container>
+
+      {/* join container */}
+      <div className='join-container'>
+        <Container>
+          <h2>If your need join our course</h2>
+          <p>We believe everyone has the capacity to be creative. Turitor is aplace where people develop their own potential.</p>
+          <div className='join-input'>
+            <input name='email' type='email' placeholder='Enter Email' />
+            <button>Submit Now <FaArrowRight /></button>
+          </div>
+        </Container>
+      </div>
     </div>
   );
 };
