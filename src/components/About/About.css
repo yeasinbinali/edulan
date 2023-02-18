@@ -1,0 +1,27 @@
+.about-header{
+    margin: 3em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-header-description h1{
+    color: black;
+    font-size: 3em;
+    font-family:'Times New Roman', Times, serif;
+}
+.about-header-description p{
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 991px) {
+    .about-header{
+        display: block;
+    }
+}
+@media screen and (max-width: 601px) {
+    .about-img{
+        width: 100%;
+    }
+}
