@@ -1,0 +1,39 @@
+.course-container{
+    padding: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.main {
+    padding: 10px;
+}
+.subject-name{
+    color: rgb(255, 0, 128);
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.price{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #326aee;
+}
+.headname{
+    font-size: 1.25em;
+    text-decoration: none;
+    color: black;
+}
+.headname:hover{
+    color: #326aee;
+}
+.vote{
+    font-size: 1.2em;
+}
+.star{
+    color: goldenrod;
+}
+.card-description{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-description p{
+    font-size: 1.2em;
+}

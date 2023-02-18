@@ -1,0 +1,32 @@
+.course-detail{
+    width: 50%;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.star{
+    color: goldenrod;
+}
+.review{
+    font-size: 1.2em;
+}
+.price{
+    color: red;
+}
+.head-name{
+    margin: 0.5em 0;
+    color: #4878eb;
+}
+.description{
+    text-align: justify;
+    font-size: 1.2em;
+}
+.course-detail a{
+    background-color: rgb(255, 0, 128);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+.course-detail a:hover{
+    color: white;
+    background-color: #4878eb;
+}

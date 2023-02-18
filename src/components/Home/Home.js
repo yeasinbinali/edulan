@@ -11,7 +11,6 @@ import aboutImg from "../../images/educourse-about.png";
 
 const Home = () => {
   const subjects = useLoaderData();
-  console.log(subjects);
   return (
     <div>
       {/* Main header */}
@@ -24,7 +23,7 @@ const Home = () => {
             We believe everyone has the capacity to be creative. Turitor is a
             place where people develop their own potential.
           </p>
-          <Link>
+          <Link to='/courses'>
             VIEW COURSES <FaArrowRight />
           </Link>
         </div>
@@ -75,7 +74,7 @@ const Home = () => {
               <FaCheck /> Self Development
             </h6>
           </div>
-          <Link>
+          <Link to='/courses'>
             VIEW COURSES <FaArrowRight />
           </Link>
         </div>

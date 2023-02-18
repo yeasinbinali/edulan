@@ -1,0 +1,28 @@
+.courses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+.course-headname {
+  color: #4878eb;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  margin: 1.5em 0;
+}
+
+@media screen and (max-width: 991px) {
+  .courses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+  }
+}
+
+
+@media screen and (max-width: 601px) {
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1em;
+    }
+  }
