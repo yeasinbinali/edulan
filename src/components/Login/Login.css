@@ -1,0 +1,29 @@
+.login-form{
+    margin-top: 3.5em;
+    background-color: rgb(240, 240, 240);
+    padding: 2em;
+}
+.login{
+    width: 50%;
+    margin: auto;
+}
+.login-header{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+.submit-btn{
+    background-color: #4878eb;
+    border: none;
+    padding: 8px 20px;
+    color: white;
+}
+.submit-btn:hover{
+    background-color: rgb(255, 0, 128);
+}
+
+
+@media screen and (max-width: 601px) {
+    .login{
+        width: 100%;
+    }
+}
