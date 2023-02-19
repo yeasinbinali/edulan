@@ -4,10 +4,12 @@ import { Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/UserContext";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [error, setError] = useState('');
-  const {createUser} = useContext(AuthContext);
+  const {createUser, verifyEmail, profileUpdate} = useContext(AuthContext);
+
   const handleSubmitForm = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -20,11 +22,29 @@ const Register = () => {
     .then((result) => {
       const user = result.user;
       form.reset();
+      handleEmailVerify();
+      handleUpdateProfile(name, photoURL)
       console.log(user);
     })
     .catch((error) => {
       const errorMessage = error.message;
       setError(errorMessage);
+    })
+  }
+
+  const handleUpdateProfile = (name, photoURL) => {
+    profileUpdate({
+      displayName: name,
+      photoURL: photoURL
+    })
+    .then(() => {})
+    .catch((error) => {console.error(error)})
+  }
+
+  const handleEmailVerify = () => {
+    verifyEmail()
+    .then(() => {
+      toast.success('Check your email and verify')
     })
   }
   return (

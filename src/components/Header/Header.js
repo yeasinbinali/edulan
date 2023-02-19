@@ -7,9 +7,11 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import logo from "../../images/educourse-logo.png";
 import { AuthContext } from "../../contexts/UserContext";
+import { FaUser } from "react-icons/fa";
 
 const Header = () => {
   const {user, logOut} = useContext(AuthContext);
+  
   const handleLogOut = () => {
     logOut()
     .then(() => {})
@@ -32,13 +34,14 @@ const Header = () => {
               {
                 user?.email ? 
                 <>
-                  <p className='text-danger mt-3'>{user?.email}</p>
                   <button onClick={handleLogOut} className='logout-btn'>Logout</button>
+                  <Image className='photo' roundedCircle src={user?.photoURL} alt='noPhoto'></Image>
                 </>
                 : 
                 <>
                   <Link to="/register">Register</Link>
                   <Link to="/login">Login</Link>
+                  <FaUser className='mt-4' />
                 </>
               }
             </Nav>
