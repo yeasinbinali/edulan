@@ -9,7 +9,14 @@ import logo from "../../images/educourse-logo.png";
 import { AuthContext } from "../../contexts/UserContext";
 
 const Header = () => {
-  const {user} = useContext(AuthContext);
+  const {user, logOut} = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+    .then(() => {})
+    .catch((error) => {
+      console.error(error);
+    })
+  }
   return (
     <div>
       <Navbar className="navbar" expand="lg">
@@ -26,7 +33,7 @@ const Header = () => {
                 user?.email ? 
                 <>
                   <p className='text-danger mt-3'>{user?.email}</p>
-                  <button className='logout-btn'>Logout</button>
+                  <button onClick={handleLogOut} className='logout-btn'>Logout</button>
                 </>
                 : 
                 <>
