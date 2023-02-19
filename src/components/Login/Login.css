@@ -21,6 +21,15 @@
     background-color: rgb(255, 0, 128);
 }
 
+.google-btn{
+    border: none;
+    background-color: rgb(221, 179, 71);
+    color: black;
+}
+.google-btn:hover{
+    color: red;
+}
+
 
 @media screen and (max-width: 601px) {
     .login{

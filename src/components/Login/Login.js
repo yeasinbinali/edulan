@@ -3,10 +3,15 @@ import "./Login.css";
 import { Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { AuthContext } from "../../contexts/UserContext";
+import { Link } from "react-router-dom";
+import { FaGoogle } from "react-icons/fa";
+import { GoogleAuthProvider } from "@firebase/auth";
+
 
 const Login = () => {
   const [error, setError] = useState('');
-  const {signInUser} = useContext(AuthContext);
+  const {signInUser, googleSignIn} = useContext(AuthContext);
+  const googleProvider = new GoogleAuthProvider();
 
   const handleLoginForm = event => {
     event.preventDefault();
@@ -18,6 +23,18 @@ const Login = () => {
     .then((result) => {
       const user = result.user;
       form.reset();
+      console.log(user);
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+      setError(errorMessage);
+    })
+  }
+
+  const handleGoogleProvider = () => {
+    googleSignIn(googleProvider)
+    .then((result) => {
+      const user = result.user;
       console.log(user);
     })
     .catch((error) => {
@@ -44,6 +61,8 @@ const Login = () => {
         <button className="submit-btn w-100" type="submit">
           Submit
         </button>
+        <p className='text-center my-3'>New in Edulan? <Link to='/register'>Register</Link></p>
+        <button className='google-btn w-100' onClick={handleGoogleProvider}><FaGoogle /> Google</button>
       </Form>
     </Container>
   );
