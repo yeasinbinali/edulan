@@ -8,3 +8,8 @@ Nav a{
 Nav a:hover{
     color: blue;
 }
+.logout-btn{
+    border: none;
+    background-color: white;
+    margin-left: 1em;
+}
