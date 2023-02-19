@@ -7,6 +7,7 @@ import Register from "../../components/Register/Register";
 import Login from "../../components/Login/Login";
 import Home from "../../components/Home/Home";
 import CourseDetail from "../../components/Courses/CourseDetail/CourseDetail";
+import TermsAndConditions from "../../components/TermsAndConditions/TermsAndConditions";
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: '/terms',
+        element: <TermsAndConditions></TermsAndConditions>
       },
       {
         path: "/login",
