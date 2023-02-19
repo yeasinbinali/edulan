@@ -15,6 +15,38 @@ const About = () => {
                     <p>At Turitor, we believe everyone should have the opportunity to create progress through technology and develop the skills of tomorrow. With assessments, learning paths and courses authored by industry experts</p>
                 </div>
             </div>
+
+
+            <div className='page-summary'>
+                <div className='single-summary'>
+                    <Image src='https://xpressrow.com/html/edulan/assets/img/icon/c_01.png'></Image>
+                    <div>
+                        <h2>146<sub>+</sub></h2>
+                        <p>Award Wining</p>
+                    </div>
+                </div>
+                <div className='single-summary'>
+                    <Image src='https://xpressrow.com/html/edulan/assets/img/icon/c_02.png'></Image>
+                    <div>
+                        <h2>56k<sub>+</sub></h2>
+                        <p>Students</p>
+                    </div>
+                </div>
+                <div className='single-summary'>
+                    <Image src='https://xpressrow.com/html/edulan/assets/img/icon/c_03.png'></Image>
+                    <div>
+                        <h2>103<sub>+</sub></h2>
+                        <p>Instructors</p>
+                    </div>
+                </div>
+                <div className='single-summary'>
+                    <Image src='https://xpressrow.com/html/edulan/assets/img/icon/c_04.png'></Image>
+                    <div>
+                        <h2>186<sub>+</sub></h2>
+                        <p>Countries</p>
+                    </div>
+                </div>
+            </div>
         </Container>
     );
 };
