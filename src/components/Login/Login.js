@@ -6,12 +6,12 @@ import { AuthContext } from "../../contexts/UserContext";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { GoogleAuthProvider } from "@firebase/auth";
+import toast from "react-hot-toast";
 
 
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [error, setError] = useState('');
   const {signInUser, googleSignIn} = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
   let from = location.state?.from?.pathname || "/";
@@ -28,10 +28,11 @@ const Login = () => {
       form.reset();
       console.log(user);
       navigate(from, { replace: true });
+      toast.success('Welcome to Edulan');
     })
     .catch((error) => {
       const errorMessage = error.message;
-      setError(errorMessage);
+      toast.error(errorMessage);
     })
   }
 
@@ -40,11 +41,12 @@ const Login = () => {
     .then((result) => {
       const user = result.user;
       console.log(user);
-      navigate('/');
+      navigate(from, { replace: true });
+      toast.success('Welcome to Edulan');
     })
     .catch((error) => {
       const errorMessage = error.message;
-      setError(errorMessage);
+      toast.error(errorMessage);
     })
   }
   return (
@@ -62,7 +64,6 @@ const Login = () => {
             placeholder="Password"
           />
         </Form.Group>
-        <p className='text-danger'>{error}</p>
         <button className="submit-btn w-100" type="submit">
           Submit
         </button>

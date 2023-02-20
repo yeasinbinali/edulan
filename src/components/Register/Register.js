@@ -6,10 +6,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/UserContext";
 // import toast from "react-hot-toast";
 import Button from "react-bootstrap/Button";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const navigate = useNavigate();
-  const [error, setError] = useState('');
   const [checked, setChecked] = useState(false);
   const {createUser, verifyEmail, profileUpdate} = useContext(AuthContext);
 
@@ -28,11 +28,12 @@ const Register = () => {
       handleEmailVerify();
       handleUpdateProfile(name, photoURL);
       navigate('/');
+      toast.success('Welcome to Edulan');
       console.log(user);
     })
     .catch((error) => {
       const errorMessage = error.message;
-      setError(errorMessage);
+      toast.error(errorMessage);
     })
   }
 
@@ -83,7 +84,6 @@ const Register = () => {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check onClick={handleChecked} type="checkbox" label={<>Accept <Link to='/terms'>Terms and Conditions</Link></>} />
         </Form.Group>
-        <p className='text-danger text-center'>{error}</p>
         <Button disabled={!checked} className="submit-btn w-100" type="submit">
           Submit
         </Button>

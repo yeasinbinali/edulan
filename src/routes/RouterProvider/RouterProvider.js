@@ -9,6 +9,7 @@ import Home from "../../components/Home/Home";
 import CourseDetail from "../../components/Courses/CourseDetail/CourseDetail";
 import TermsAndConditions from "../../components/TermsAndConditions/TermsAndConditions";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import BlogDetails from "../../components/Blogs/BlogDetails/BlogDetails";
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +49,13 @@ export const router = createBrowserRouter([
         element: <Blogs></Blogs>,
         loader: async() => {
           return fetch('http://localhost:5000/blogs');
+        }
+      },
+      {
+        path: "/blogs/:id",
+        element: <PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
+        loader: async({params}) => {
+          return fetch(`http://localhost:5000/blogs/${params.id}`);
         }
       },
       {

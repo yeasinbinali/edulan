@@ -1,0 +1,25 @@
+.blog-detail{
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    text-align: center;
+    padding: 2em;
+}
+.detail-image{
+    width: 50%;
+}
+.blog-detail h3{
+    padding: .3em 0;
+    color: #4878eb;
+}
+.blog-detail p{
+    text-align: justify;
+}
+.blog-detail a{
+    text-decoration: none;
+    background-color: rgb(255, 0, 128);
+    color: white;
+    padding: 0.5em 2em;
+}
+.blog-detail a:hover{
+    background-color: #4878eb;
+    color: white;
+}
