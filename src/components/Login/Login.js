@@ -3,15 +3,18 @@ import "./Login.css";
 import { Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { AuthContext } from "../../contexts/UserContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { GoogleAuthProvider } from "@firebase/auth";
 
 
 const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [error, setError] = useState('');
   const {signInUser, googleSignIn} = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
+  let from = location.state?.from?.pathname || "/";
 
   const handleLoginForm = event => {
     event.preventDefault();
@@ -24,6 +27,7 @@ const Login = () => {
       const user = result.user;
       form.reset();
       console.log(user);
+      navigate(from, { replace: true });
     })
     .catch((error) => {
       const errorMessage = error.message;
@@ -36,6 +40,7 @@ const Login = () => {
     .then((result) => {
       const user = result.user;
       console.log(user);
+      navigate('/');
     })
     .catch((error) => {
       const errorMessage = error.message;

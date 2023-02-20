@@ -2,12 +2,13 @@ import React, {useContext, useState} from "react";
 import "./Register.css";
 import { Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/UserContext";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import Button from "react-bootstrap/Button";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [error, setError] = useState('');
   const [checked, setChecked] = useState(false);
   const {createUser, verifyEmail, profileUpdate} = useContext(AuthContext);
@@ -25,7 +26,8 @@ const Register = () => {
       const user = result.user;
       form.reset();
       handleEmailVerify();
-      handleUpdateProfile(name, photoURL)
+      handleUpdateProfile(name, photoURL);
+      navigate('/');
       console.log(user);
     })
     .catch((error) => {

@@ -35,7 +35,7 @@ const Header = () => {
                 user?.email ? 
                 <>
                   <button onClick={handleLogOut} className='logout-btn'>Logout</button>
-                  <Image className='photo' roundedCircle src={user?.photoURL} alt='noPhoto'></Image>
+                  <Image className='photo' roundedCircle src={user?.photoURL} alt='photo'></Image>
                 </>
                 : 
                 <>
