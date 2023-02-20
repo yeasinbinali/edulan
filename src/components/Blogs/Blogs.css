@@ -1,0 +1,27 @@
+.header-name{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 1.2em 0;
+    color: #4878eb;
+}
+.blogs-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+}
+
+@media screen and (max-width: 991px) {
+    .blogs-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+    }
+}
+
+@media screen and (max-width: 601px) {
+    .blogs-container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1em;
+    }
+}
