@@ -1,9 +1,10 @@
 import React from 'react';
 import './Instructor.css';
 import Image from "react-bootstrap/Image";
+import useTitle from '../../../hooks/useTitle';
 
 const Instructor = (params) => {
-    console.log(params)
+    useTitle('Instructor');
     const {name, designation, image} = params.instructor;
     return (
         <div className='instructor'>   

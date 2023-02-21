@@ -7,9 +7,11 @@ import { AuthContext } from "../../contexts/UserContext";
 // import toast from "react-hot-toast";
 import Button from "react-bootstrap/Button";
 import toast from "react-hot-toast";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
   const navigate = useNavigate();
+  useTitle('Register');
   const [checked, setChecked] = useState(false);
   const {createUser, verifyEmail, profileUpdate} = useContext(AuthContext);
 

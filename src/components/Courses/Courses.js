@@ -3,9 +3,11 @@ import './Courses.css';
 import { Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router';
 import Course from './Course/Course';
+import useTitle from '../../hooks/useTitle';
 
 const Courses = () => {
     const courses = useLoaderData();
+    useTitle('Courses');
     return (
         <Container>
             <h1 className='course-headname'>All Catagory Courses are here</h1>

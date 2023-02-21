@@ -5,10 +5,11 @@ import { useLoaderData } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Instructor from "./Instructor/Instructor";
 import { FaArrowRight } from "react-icons/fa";
+import useTitle from "../../hooks/useTitle";
 
 const About = () => {
   const instructors = useLoaderData();
-  console.log(instructors);
+  useTitle('About');
   return (
     <Container>
       {/* about header */}

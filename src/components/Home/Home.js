@@ -8,9 +8,11 @@ import { FaArrowRight, FaCheck } from "react-icons/fa";
 import { Container } from "react-bootstrap";
 import Subject from "./Subject/Subject";
 import aboutImg from "../../images/educourse-about.png";
+import useTitle from "../../hooks/useTitle";
 
 const Home = () => {
   const subjects = useLoaderData();
+  useTitle('Home');
   return (
     <div>
       {/* Main header */}

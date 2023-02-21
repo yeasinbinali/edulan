@@ -5,10 +5,12 @@ import Image from "react-bootstrap/Image";
 import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { useLoaderData } from 'react-router';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 
 const CourseDetail = () => {
     const course = useLoaderData();
     const courseParse = JSON.parse(course);
+    useTitle('CourseDetail');
     const {courseImg, price, subjectname, headname, review, description} = courseParse;
     return (
         <Container className='course-detail p-3'>
