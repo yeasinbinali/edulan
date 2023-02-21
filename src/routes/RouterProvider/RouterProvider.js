@@ -19,52 +19,60 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: async() => {
-          return fetch('http://localhost:5000/subjects');
-        }
+        loader: async () => {
+          return fetch("https://edulan-server.vercel.app/subjects");
+        },
       },
       {
         path: "/courses",
         element: <Courses></Courses>,
-        loader: async() => {
-          return fetch('http://localhost:5000/courses');
-        }
+        loader: async () => {
+          return fetch("https://edulan-server.vercel.app/courses");
+        },
       },
       {
-        path: '/courses/:id',
-        element: <PrivateRoute><CourseDetail></CourseDetail></PrivateRoute>,
-        loader: async({params}) => {
-          return fetch(`http://localhost:5000/courses/${params.id}`);
-        }
+        path: "/courses/:id",
+        element: (
+          <PrivateRoute>
+            <CourseDetail></CourseDetail>
+          </PrivateRoute>
+        ),
+        loader: async ({ params }) => {
+          return fetch(`https://edulan-server.vercel.app/courses/${params.id}`);
+        },
       },
       {
         path: "/about",
         element: <About></About>,
-        loader: async() => {
-          return fetch('http://localhost:5000/instructors');
-        }
+        loader: async () => {
+          return fetch("https://edulan-server.vercel.app/instructors");
+        },
       },
       {
         path: "blogs",
         element: <Blogs></Blogs>,
-        loader: async() => {
-          return fetch('http://localhost:5000/blogs');
-        }
+        loader: async () => {
+          return fetch("https://edulan-server.vercel.app/blogs");
+        },
       },
       {
         path: "/blogs/:id",
-        element: <PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
-        loader: async({params}) => {
-          return fetch(`http://localhost:5000/blogs/${params.id}`);
-        }
+        element: (
+          <PrivateRoute>
+            <BlogDetails></BlogDetails>
+          </PrivateRoute>
+        ),
+        loader: async ({ params }) => {
+          return fetch(`https://edulan-server.vercel.app/blogs/${params.id}`);
+        },
       },
       {
         path: "/register",
         element: <Register></Register>,
       },
       {
-        path: '/terms',
-        element: <TermsAndConditions></TermsAndConditions>
+        path: "/terms",
+        element: <TermsAndConditions></TermsAndConditions>,
       },
       {
         path: "/login",

@@ -19,7 +19,7 @@ const Course = (params) => {
   } = params.course;
   return (
     <div className='course-container'>
-      <Image src={courseImg}></Image>
+      <Image className='course-img' src={courseImg}></Image>
       <div className='main'> 
       <div className="d-flex justify-content-between align-items-center">
         <h4 className='subject-name'>{subjectname}</h4>
